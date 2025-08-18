@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Portfólio | William Cruvinel</title>
+  </head>
+  <body>
+    <div class="detalhe"></div>
+    
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio">Início</a>
+        </li>
+        <li>
+          <a href="#sobre">Sobre</a>
+        </li>
+        <li class="Habilidades-link">
+          <a href="#habilidades">Habilidades</a>
+        </li>
+        <li>
+          <a href="#projetos">Projetos</a>
+        </li>
+        <li>
+          <a href="#contatos">Contatos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <main id="inicio" class="cabecalho">
+      <picture>
+        <source
+          class="img-cropy"
+          media="(max-width: 900px)"
+          srcset="./img/perfil/perfil-3-cropy.jpg"
+        />
+        <img src="./img/perfil/perfil-3.jpg" alt="william cruvinel" />
+      </picture>
+      <div>
+        <h1>William Cruvinel</h1>
+        <p>Desenvolvedor Full Stack</p>
+      </div>
+    </main>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="sobre">
+      <h2>Sobre mim</h2>
+      <article class="sobre-caixa">
+        <p>
+          Sou estudante de Análise e Desenvolvimento de Sistemas e apaixonado
+          por tecnologia e inovação. Nos últimos anos, venho me dedicando ao
+          aprendizado e à prática em desenvolvimento full stack, construindo
+          projetos que envolvem desde o frontend com React e Next.js, até o
+          backend com NestJS, Node.js e bancos de dados.
+        </p>
+        <p>
+          Tenho foco em escrever código limpo, aprender novas ferramentas e
+          aplicar boas práticas de desenvolvimento, sempre buscando evoluir
+          minhas habilidades e entregar soluções eficientes. Atualmente, meu
+          objetivo é conquistar minha primeira oportunidade como desenvolvedor,
+          onde poderei aplicar meus conhecimentos, aprender com profissionais
+          experientes e contribuir com projetos.
+        </p>
+      </article>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="habilidades">
+      <h2>Habilidades</h2>
+      <div class="habilidades-caixa">
+        <div class="habilidades-itens">
+          <img src="/img/habilidades/html.png" />
+          <img src="/img/habilidades/css.png" />
+          <img src="/img/habilidades/javascript.png" />
+          <img src="/img/habilidades/typescript.png" />
+          <img src="/img/habilidades/sass.png" />
+          <img src="/img/habilidades/bootstrap.png" />
+          <img src="/img/habilidades/github.png" />
+          <img src="/img/habilidades/node-js.png" />
+          <img src="/img/habilidades/postgres.png" />
+          <img src="/img/habilidades/prisma.png" />
+          <img src="/img/habilidades/jwt-auth.png" />
+          <img src="/img/habilidades/react.png" />
+          <img src="/img/habilidades/tailwind-css.png" />
+          <img src="/img/habilidades/shadcn.png" />
+          <img src="/img/habilidades/next-js.png" />
+          <img src="/img/habilidades/nest.png" />
+          <!-- <img src="/img/habilidades/docker.png" /> -->
+          <!-- <img src="/img/habilidades/mui.png" /> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MEUS PROJETOS -->
+    <section id="projetos" class="projetos">
+      <h2>Projetos</h2>
+      <div class="projetos-caixa">
+        <a href="https://williamcruvinel.github.io/bikcraft/" class="projetos-item"  target="_blank">
+          <img src="./img/projetos/bikcraft.png" alt="..." />
+          <div  class="items-textos">
+            <h3>Bikcraft</h3>
+          </div>
+        </a>
+
+         <a href="https://williamcruvinel.github.io/pizzaria/" class="projetos-item" target="_blank">
+          <img src="./img/projetos/pizza-shop.png" alt="..." />
+          <div  class="items-textos">
+            <h3>Pizza Shop</h3>
+          </div>
+        </a>
+
+        <a href="https://williamcruvinel.github.io/PetLife/" class="projetos-item" target="_blank">
+          <img src="./img/projetos/pet-life.png" alt="..." />
+          <div  class="items-textos">
+            <h3>Pet Life</h3>
+          </div>
+        </a>
+
+        <a href="https://williamcruvinel.github.io/android/" class="projetos-item" target="_blank">
+          <img src="./img/projetos/android.png" alt="..." />
+          <div  class="items-textos">
+            <h3>Curiosidades de Tecnologia | Android</h3>
+          </div>
+        </a>
+
+        <a href="https://williamcruvinel.github.io/jogo-da-velha/" class="projetos-item" target="_blank">
+          <img src="./img/projetos/jogo-da-velha.png" alt="..." />
+          <div  class="items-textos">
+            <h3>Jogo da velha</h3>
+          </div>
+        </a>
+
+        <a href="#projeto" class="projetos-item">
+          <img src="./img/projetos/construcao.png" alt="..." />
+          <div  class="items-textos">
+            <h3>EM CONSTRUÇÂO</h3>
+          </div>
+        </a>
+
+        
+      </div>
+    </section>
+
+    <!-- CONTATOS -->
+    <section id="contatos" class="contatos">
+      <h2>Contato</h2>
+
+      <form id="formulario" class="formulario-contato">
+        <div class="grupo-form">
+          <input type="text" placeholder="Nome" class="input-form" id="nome" />
+        </div>
+
+        <div class="grupo-form">
+          <textarea
+            class="input-form"
+            placeholder="Digite sua mensagem..."
+            rows="5"
+            id="mensagem"
+          ></textarea>
+        </div>
+
+        <button type="submit">
+          <p>Enviar no WhatsApp </p>
+          <img src="./img/enviar.png">
+        </button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <a href="https://github.com/williamcruvinel" target="_blank">
+          <img src="./img/github-white.png" alt="github" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/william-cruvinel/" target="_blank">
+          <img src="./img/linkedin.png" alt="github" />
+        </a>
+      </div>
+      <p>by <span>William Cruvinel</span></p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
