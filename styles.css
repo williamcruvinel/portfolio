@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  background: linear-gradient(var(--maisEscuro), var(--escuro));
+  background: linear-gradient(black 0%, var(--maisEscuro) 15% , var(--escuro) 30%);
 }
 
 h2 {
@@ -37,7 +37,7 @@ h2 {
 .navegacao {
   position: fixed;
   top: 0;
-  background-color: rgba(17, 26, 19, 0.8);
+  background-color: rgba(17, 26, 19, 0.5);
   width: 100%;
   z-index: 100;
   padding: 1.5rem;
@@ -79,6 +79,15 @@ h2 {
   }
 }
 
+.decor{
+  position: relative;
+  overflow: hidden;
+  * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .cabecalho {
   min-height: 100vh;
   display: flex;
@@ -91,8 +100,7 @@ h2 {
     height: auto;
     box-shadow: 0 0 20px rgba(30, 165, 45, 0.2);
     border-radius: 20px;
-    border-bottom-left-radius: 60px;
-    border-top-right-radius: 60px;
+    border-top-right-radius: 80px;
     animation: floating 5s ease-in-out infinite;
     border: 2px solid var(--vidro);
   }
@@ -122,13 +130,14 @@ h2 {
 
 .sobre {
   padding: 6rem 2rem;
+  background: linear-gradient(transparent 20%, var(--escuro) 70%);
 
   .sobre-caixa {
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
     border-radius: 16px;
-    border: 1px solid var(--vidro);
+    border: 1px solid var(--secundaria);
     background-color: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(10px);
   }
@@ -146,6 +155,7 @@ h2 {
 
   .habilidades-caixa {
     max-width: 800px;
+    padding: 2rem 0;
     margin: 0 auto;
   }
 
@@ -177,7 +187,6 @@ h2 {
 
 .projetos {
   padding: 6rem 2rem;
-  background: var(--MaisEscuro);
 
   a {
     text-decoration: none;
@@ -250,8 +259,7 @@ h2 {
 }
 
 .contatos {
-  padding: 6rem 2 rem;
-  margin: 80px 0;
+  padding: 6rem 2rem;
 
   form {
     max-width: 600px;
@@ -314,7 +322,7 @@ h2 {
 }
 
 footer {
-  background-color: rgba(17, 26, 19, 0.8);
+  background-color: rgba(17, 26, 19, 0.5);
   width: 100%;
   padding: 1.5rem;
   display: flex;
@@ -322,7 +330,6 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--claro);
-  margin-top: 60px;
 
   div {
     display: flex;
@@ -345,7 +352,54 @@ footer {
   }
 }
 
-@media (width < 900px) {
+/* keyframes */
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Decorações */
+h3::before {
+  content: '';
+  display: inline-block;
+  background: var(--secundaria);
+  width: 4px;
+  height: 12px;
+  margin-right: 5px;
+  transition: width 0.2s;
+}
+
+.decor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('./img/decor-capa-2.svg') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.cabecalho::before {
+  content: '';
+  display: inline-block;
+  background: var(--secundaria);
+  width: 4px;
+  height: 320px;
+  margin-right: 0px;
+  transition: width 0.2s;
+}
+
+.sobre-caixa {
+  background: url('./img/decor-sobre.svg') no-repeat bottom 10px left 10px;
+}
+
+/* Medias Query*/
+@media (width <= 900px) {
   .cabecalho {
     flex-direction: column;
     img {
@@ -357,10 +411,17 @@ footer {
       margin-left: 0;
     }
   }
+
+  .cabecalho::before {
+    display: none;
+  }
+
+  .decor::before {
+  background: url('./img/decor-capa.svg') center/cover no-repeat;
+}
 }
 
-
-@media (width < 450px) {
+@media (width <= 450px) {
   .menu {
     flex-wrap: wrap;
   }
@@ -397,7 +458,7 @@ footer {
   }
 }
 
-@media (width < 366px) {
+@media (width <= 366px) {
   h2 {
     font-size: 2rem;
   }
@@ -422,47 +483,4 @@ footer {
   }
 }
 
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
 
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* Enfeites */
-
-h3:before {
-  content: '';
-  display: inline-block;
-  background: var(--secundaria);
-  width: 2px;
-  height: 12px;
-  margin-right: 5px;
-  transition: width 0.2s;
-}
-
-.sobre-caixa {
-  background: url('./img/decor-sobre.svg') no-repeat bottom 10px left 10px;
-}
-
-.detalhe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.5;
-  background: radial-gradient(
-      circle at -5% 20%,
-      var(--primaria) 0%,
-      var(--escuro) 20%,
-      transparent 50%
-    ),
-    radial-gradient(circle at 110% 80%,var(--primaria) 0%, var(--escuro) 20%, transparent 50%),
-    var(--maisEscuro);
-}
