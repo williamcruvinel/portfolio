@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  background: linear-gradient(black 0%, var(--maisEscuro) 15% , var(--escuro) 30%);
+  background: linear-gradient(var(--maisEscuro) 0% , var(--escuro) 30%);
 }
 
 h2 {
@@ -98,7 +98,7 @@ h2 {
   img {
     width: 350px;
     height: auto;
-    box-shadow: 0 0 20px rgba(30, 165, 45, 0.2);
+    box-shadow: 0 0 20px rgba(30, 165, 45, 0.4);
     border-radius: 20px;
     border-top-right-radius: 80px;
     animation: floating 5s ease-in-out infinite;
