@@ -14,16 +14,29 @@ html {
 }
 
 :root {
-  --primaria: #105500;
-  --secundaria: #71de35;
-  --escuro: #0c1307;
-  --maisEscuro: #071003;
-  --claro: #c5d2b9;
-  --vidro: rgba(255, 255, 255, 0.1);
+  --primaria: #618E69;        
+  --secundaria: #9BE564;      
+  --acento: #86C28B;          
+  --realce: #6DA67A;     
+
+  --escuro: #203E23;          
+  --maisEscuro: #001600;      
+  --profundo: #27081D;       
+
+  --claro: #E6F1E3;           
+  --medioClaro: #D2E7AA;      
+  --cinzaVerde: #859987;      
+  --cinzaEscuro: #4A4857;     
+
+  --vidro: rgba(255, 255, 255, 0.08); 
+  --vidro-escuro: rgba(0, 0, 0, 0.3); 
+  --sombra: rgba(0, 0, 0, 0.25);     
+
+  --gradiente: linear-gradient(135deg, #001600 0%, #203E23 50%, #416646 100%);
 }
 
 body {
-  background: linear-gradient(var(--maisEscuro) 0% , var(--escuro) 30%);
+  background: var(--gradiente);
 }
 
 h2 {
@@ -93,7 +106,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: row;  
 
   img {
     width: 350px;
@@ -130,15 +143,13 @@ h2 {
 
 .sobre {
   padding: 6rem 2rem;
-  background: linear-gradient(transparent 20%, var(--escuro) 70%);
-
   .sobre-caixa {
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
     border-radius: 16px;
     border: 1px solid var(--secundaria);
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
   }
 
@@ -168,8 +179,8 @@ h2 {
     justify-items: center;
 
     img {
-      height: 100px;
-      width: 100px;
+      height: 80px;
+      width: 80px;
       object-fit: cover;
       border-radius: 100%;
       margin: 5px;
@@ -380,7 +391,7 @@ h3::before {
   position: absolute;
   inset: 0;
   background: url('./img/decor-capa-2.svg') center/cover no-repeat;
-  opacity: 0.1;
+  opacity: 0.2;
   z-index: 0;
 }
 
