@@ -16,20 +16,10 @@ html {
 :root {
   --primaria: #618E69;        
   --secundaria: #9BE564;      
-  --acento: #86C28B;          
-  --realce: #6DA67A;     
-
   --escuro: #203E23;          
   --maisEscuro: #001600;      
-  --profundo: #27081D;       
-
   --claro: #E6F1E3;           
-  --medioClaro: #D2E7AA;      
-  --cinzaVerde: #859987;      
-  --cinzaEscuro: #4A4857;     
-
   --vidro: rgba(255, 255, 255, 0.08); 
-  --vidro-escuro: rgba(0, 0, 0, 0.3); 
   --sombra: rgba(0, 0, 0, 0.25);     
 
   --gradiente: linear-gradient(135deg, #001600 0%, #203E23 50%, #416646 100%);
@@ -74,6 +64,7 @@ h2 {
     position: relative;
     padding: 0.5rem;
     color: #71de35;
+    opacity: 0.4;
   }
 
   a::after {
@@ -89,6 +80,10 @@ h2 {
   a:hover::after {
     width: 100%;
     transition: 0.5s ease;
+  }
+
+  a:hover {
+    opacity: 1;
   }
 }
 
@@ -179,10 +174,10 @@ h2 {
     justify-items: center;
 
     img {
-      height: 80px;
-      width: 80px;
+      height: 120;
+      width: 120px;
       object-fit: cover;
-      border-radius: 100%;
+      border-radius: 8px;
       margin: 5px;
       border: 3px solid var(--vidro);
     }
@@ -432,7 +427,7 @@ h3::before {
 }
 }
 
-@media (width <= 450px) {
+@media (width <= 470px) {
   .menu {
     flex-wrap: wrap;
   }
@@ -455,10 +450,10 @@ h3::before {
 
   .habilidades {
     .habilidades-itens {
-      gap: 10px;
+      gap: 5px;
       img {
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
         opacity: 1;
       }
     }
