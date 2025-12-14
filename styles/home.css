@@ -1,0 +1,44 @@
+.container-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-top: 80px;
+  margin: 0 auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../assets/Capa2.png')
+      no-repeat center center/cover;
+}
+
+.home .subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.home .title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.home .role {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.home .description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 40px;
+  color: #fff;
+}
