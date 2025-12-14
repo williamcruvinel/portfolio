@@ -148,3 +148,29 @@ document.addEventListener('DOMContentLoaded', () => {
   carouselContainer.addEventListener('mouseenter', stopCarousel);
   carouselContainer.addEventListener('mouseleave', startCarousel);
 });
+
+// ENVIAR MENSAGEM
+document.addEventListener('DOMContentLoaded', () => {
+  const formulario = document.getElementById('form');
+
+  formulario.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    const tel = '5516992421644';
+
+    if (!name || !msg) {
+      alert('Por favor, preencha nome e mensagem antes de enviar.');
+      return;
+    }
+
+    const texto = `Olá, me chamo ${name}! 
+    ${msg}`;
+
+    const msgFormatada = encodeURIComponent(texto);
+
+    const url = `https://wa.me/${tel}?text=${msgFormatada}`;
+
+    window.open(url, '_blank');
+  });
