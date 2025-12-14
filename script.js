@@ -77,3 +77,74 @@ window.addEventListener('scroll', () => {
     header.style.boxShadow = '0 2px 10px var(--shadow-color)';
   }
 });
+
+// CARROSSEL
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselTrack = document.querySelector('.carousel-track');
+  const stackItems = Array.from(carouselTrack.children);
+
+  stackItems.forEach((item) => {
+    const clonedItem = item.cloneNode(true);
+    carouselTrack.appendChild(clonedItem);
+  });
+
+  const allStackItems = Array.from(carouselTrack.children);
+  const originalStacksCount = stackItems.length;
+
+  let currentPosition = 0;
+  let carouselInterval;
+  const intervalTime = 1000;
+  let itemWidthWithMargin;
+
+  function calculateItemWidth() {
+    if (allStackItems.length > 0) {
+      const item = allStackItems[0];
+      const style = window.getComputedStyle(item);
+      const width = item.offsetWidth;
+      const marginLeft = parseFloat(style.marginLeft);
+      const marginRight = parseFloat(style.marginRight);
+      itemWidthWithMargin = width + marginLeft + marginRight;
+    } else {
+      itemWidthWithMargin = 0;
+    }
+  }
+
+  calculateItemWidth();
+
+  window.addEventListener('resize', calculateItemWidth);
+
+  function moveCarousel() {
+    if (itemWidthWithMargin === 0) return;
+
+    currentPosition += itemWidthWithMargin;
+
+    carouselTrack.style.transition = 'transform 1s ease-in-out';
+    carouselTrack.style.transform = `translateX(-${currentPosition}px)`;
+
+    if (currentPosition >= originalStacksCount * itemWidthWithMargin) {
+      setTimeout(() => {
+        carouselTrack.style.transition = 'none';
+        currentPosition = 0;
+        carouselTrack.style.transform = `translateX(-${currentPosition}px)`;
+      }, 1000);
+    }
+  }
+
+  function startCarousel() {
+    if (!carouselInterval) {
+      carouselInterval = setInterval(moveCarousel, intervalTime);
+    }
+  }
+
+  function stopCarousel() {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
+  }
+
+  startCarousel();
+
+  const carouselContainer = document.querySelector('.carousel-container');
+
+  carouselContainer.addEventListener('mouseenter', stopCarousel);
+  carouselContainer.addEventListener('mouseleave', startCarousel);
+});
