@@ -1,0 +1,36 @@
+#about {
+  background-color: var(--gray-color);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.about-image img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  width: auto;
+  height: 400px;
+  background-color: transparent;
+  border-radius: 10px;
+}
