@@ -1,0 +1,54 @@
+.container-stacks {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stacks {
+  background-color: var(--bg-dark);
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.stack-item {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 15px;
+  color: var(--text-light);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  gap: 5px;
+}
+
+.stack-item i {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.stack-item p {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stack-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
