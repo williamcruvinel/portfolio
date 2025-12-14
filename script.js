@@ -67,3 +67,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// EFEITO HEADER
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 100) {
+    header.style.boxShadow = '0 5px 20px var(--shadow-color)';
+  } else {
+    header.style.boxShadow = '0 2px 10px var(--shadow-color)';
+  }
+});
