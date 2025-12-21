@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo - William Cruvinel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/curriculo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="resume" id="resume-content">
+        <!-- Cabeçalho -->
+        <div class="header">
+          <h1 class="name">WILLIAM EURÍPEDES DA SILVA CRUVINEL</h1>
+          <div class="title">Desenvolvedor Front-End</div>
+        </div>
+
+        <div class="two-column">
+          <!-- Coluna da Esquerda -->
+          <div class="left-column">
+            <!-- Contato -->
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-id-card"></i> CONTATO
+              </div>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Jd. Martins - Franca/SP</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <span>+55 (16) 9 9242-1644</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <span>williamcruvinel@hotmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fab fa-github"></i>
+                  <span>www.github.com/williamcruvinel</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fab fa-linkedin"></i>
+                  <span>www.linkedin.com/in/williamcruvinel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-code"></i> SKILLS
+              </div>
+              <div class="skills-grid">
+                <div class="skill-item">Javascript</div>
+                <div class="skill-item">Typescript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">NextJS</div>
+                <div class="skill-item">TailwindCSS</div>
+                <div class="skill-item">Bootstrap</div>
+                <div class="skill-item">NodeJS</div>
+                <div class="skill-item">NestJS</div>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">Git & GitHub</div>
+                <div class="skill-item">Prisma</div>
+                <div class="skill-item">Shadcn</div>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-graduation-cap"></i> ACADÊMICO
+              </div>
+              <div class="academic-item">
+                <div class="academic-title">
+                  UNIVERSIDADE PITÁGORAS UNOPAR ANHANGUERA
+                </div>
+                <div class="academic-details">
+                  Análise e Desenvolvimento de Sistemas
+                </div>
+                <div class="academic-period">2023 - 2025</div>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-certificate"></i> CURSOS
+              </div>
+              <div class="course-item">
+                <div class="course-name">Desenvolvimento Frontend</div>
+                <div class="course-inst">Origamid</div>
+              </div>
+              <div class="course-item">
+                <div class="course-name">Desenvolvimento Backend</div>
+                <div class="course-inst">One Bit Code</div>
+              </div>
+              <div class="course-item">
+                <div class="course-name">Desenvolvimento Fullstack</div>
+                <div class="course-inst">Refatorando</div>
+              </div>
+              <div class="course-item">
+                <div class="course-name">Desenvolvimento React Native</div>
+                <div class="course-inst">One Bit Code</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-column">
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-user"></i> SOBRE MIM
+              </div>
+              <p class="about-text">
+                Desenvolvedor Front-End formado em ADS com experiência em React,
+                TypeScript e Tailwind. Focado na criação de interfaces
+                responsivas, acessíveis e de alta performance. Atuo no
+                desenvolvimento de componentes reutilizáveis, estruturação de
+                layouts, otimização de fluxos e construção de páginas modernas e
+                escaláveis. Organizado, atento a detalhes e acostumado a
+                trabalhar com Git/GitHub em ambientes colaborativos.
+              </p>
+            </div>
+
+            <div class="section">
+              <div class="section-title">
+                <i class="fas fa-briefcase"></i> EXPERIÊNCIAS
+              </div>
+
+              <div class="experience">
+                <div class="exp-header">
+                  <div>
+                    <div class="exp-title">FREELANCER</div>
+                  </div>
+                  <div class="exp-period">2023 - Atual</div>
+                </div>
+
+                <!-- Projeto 1 -->
+                <div class="exp-subtitle">
+                  Sistema de Reservas de Livros - Biblioteca
+                </div>
+                <p class="exp-description">
+                  Desenvolvimento de um sistema de gerenciamento de biblioteca
+                  com foco no controle de livros, cópias e reservas. A aplicação
+                  permite cadastro e autenticação de usuários, criação de
+                  reservas, atualização automática do status das cópias e
+                  controle de devoluções, incluindo expiração automática de
+                  reservas.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">NestJS</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Prisma</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">JWT</span>
+                  <span class="tech-tag">REST API</span>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="exp-subtitle" style="margin-top: 20px">
+                  Catálogo de Animes
+                </div>
+                <p class="exp-description">
+                  Criação de uma aplicação web para catálogo de animes,
+                  permitindo listar títulos, visualizar informações, favoritar
+                  conteúdos e realizar buscas em tempo real. O sistema conta com
+                  ordenação por nome e data de lançamento, manipulação dinâmica
+                  do DOM e atualização de estado da aplicação sem recarregamento
+                  da página.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Vanilla JS</span>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="exp-subtitle" style="margin-top: 20px">
+                  Sushi Shop
+                </div>
+                <p class="exp-description">
+                  Desenvolvimento de uma aplicação web para apresentação de um
+                  restaurante de sushi, com foco em layout moderno e experiência
+                  do usuário. O sistema exibe um cardápio organizado, com
+                  listagem de produtos, informações visuais detalhadas e
+                  navegação intuitiva entre as seções.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Shadcn</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-download" id="download-pdf">
+          <i class="fas fa-download"></i> Baixar PDF
+        </button>
+      </div>
+    </div>
+    <script src="../js/curriculo.js"></script>
+  </body>
+</html>
