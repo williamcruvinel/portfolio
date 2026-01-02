@@ -319,3 +319,16 @@ body {
     padding: 20px;
   }
 }
+
+/* ===== MODO PDF DOWNLOAD ===== */
+.pdf-mode {
+  width: 1200px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  background: #fff !important;
+}
+
+.pdf-mode button,
+.pdf-mode .btn {
+  display: none !important;
+}

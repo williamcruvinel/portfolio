@@ -1,6 +1,6 @@
 const { jsPDF } = window.jspdf;
 
-document.getElementById('download-pdf').addEventListener('click', function () {
+document.getElementById('download-pdf').addEventListener('click', async function () {
   const element = document.getElementById('resume-content');
   const button = this;
 
@@ -8,53 +8,48 @@ document.getElementById('download-pdf').addEventListener('click', function () {
   button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando...';
   button.disabled = true;
 
-  html2canvas(element, {
-    scale: 2,
-    useCORS: true,
-    logging: false,
-    backgroundColor: '#FFFFFF',
-  })
-    .then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-      });
-
-      const pageWidth = 210;
-      const pageHeight = 297;
-
-      const imgWidth = pageWidth - 5; 
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      const finalHeight = Math.min(imgHeight, pageHeight - 5);
-      const finalWidth = (canvas.width * finalHeight) / canvas.height;
-
-      const xPos = (pageWidth - finalWidth) / 2;
-      const yPos = (pageHeight - finalHeight) / 2;
-
-      pdf.addImage(imgData, 'PNG', xPos, yPos, finalWidth, finalHeight);
-      pdf.save('William_Cruvinel_Curriculo.pdf');
-
-      button.innerHTML = originalText;
-      button.disabled = false;
-    })
-    .catch((error) => {
-      console.error('Erro:', error);
-      button.innerHTML = originalText;
-      button.disabled = false;
+  try {
+    const canvas = await html2canvas(element, {
+      scale: 1.8,                // AUMENTA O TAMANHO VISUAL
+      useCORS: true,
+      backgroundColor: '#FFFFFF',
+      windowWidth: 1200,         // força layout desktop
+      windowHeight: element.scrollHeight,
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('.resume').style.opacity = '0';
-  document.querySelector('.resume').style.transform = 'translateY(20px)';
+    // JPEG balanceado (qualidade boa + leve)
+    const imgData = canvas.toDataURL('image/jpeg', 0.72);
 
-  setTimeout(() => {
-    document.querySelector('.resume').style.transition =
-      'opacity 0.5s ease, transform 0.5s ease';
-    document.querySelector('.resume').style.opacity = '1';
-    document.querySelector('.resume').style.transform = 'translateY(0)';
-  }, 100);
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4',
+      compress: true,
+    });
+
+    const pageWidth = 210;
+    const pageHeight = 297;
+    const margin = 8;
+
+    const imgWidth = pageWidth - margin * 2;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    pdf.addImage(
+      imgData,
+      'JPEG',
+      margin,
+      margin,
+      imgWidth,
+      imgHeight,
+      undefined,
+      'FAST' // compressão extra
+    );
+
+    pdf.save('William_Cruvinel_Curriculo.pdf');
+  } catch (error) {
+    console.error('Erro ao gerar PDF:', error);
+  } finally {
+    button.innerHTML = originalText;
+    button.disabled = false;
+  }
 });
